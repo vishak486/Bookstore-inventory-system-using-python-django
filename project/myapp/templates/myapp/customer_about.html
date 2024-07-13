@@ -1,0 +1,178 @@
+{% extends 'myapp/customer_base.html' %}
+{% load static %}
+{% block title %}
+About Us
+{% endblock %}
+{% block background %}background="{% static './myapp/images/unsplash.jpg' %}"{% endblock %}
+{% block body %}
+
+    
+<section class="hero-wrap hero-wrap-2" style="background-image: url({% static 'myapp/images/bg_5.jpg' %});" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row no-gutters slider-text align-items-center justify-content-center">
+        <div class="col-md-9 ftco-animate mb-0 text-center">
+            <p class="breadcrumbs mb-0"><span class="mr-2"><a href="{% url 'home' %}">Home <i class="fa fa-chevron-right"></i></a></span> <span>About us <i class="fa fa-chevron-right"></i></span></p>
+          <h1 class="mb-0 bread">About Us</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="heading-section text-center ftco-animate pb-4">
+                    <span class="subheading">Welcome to Our Bookstore</span>
+                    <h2>About Us</h2>
+                </div>
+                <p>Welcome to V&V Bookstore, a haven for book lovers and a treasure trove for literary enthusiasts. We take pride in curating a diverse collection of books that cater to every taste, from classic literature to contemporary bestsellers.</p>
+                <p>Our journey began with a passion for connecting people with the magic of written words. Far away from the hustle and bustle, we've created a cozy space where bookworms can lose themselves in the captivating worlds crafted by talented authors.</p>
+                <blockquote class="blockquote my-5">
+                    <span class="fa fa-quote-left"></span>
+                    <h3>Good friends, good books, and a sleepy conscience: this is the ideal life.</h3>
+                </blockquote>
+                <p>At V&V Bookstore, we believe that books have the power to inspire, educate, and transport readers to places they've never been. Our shelves are filled with carefully selected titles, and our knowledgeable staff is always ready to assist you in finding your next literary adventure.</p>
+                <p>Whether you're a seasoned reader or just starting your reading journey, we welcome you to explore the wonders of literature within our walls. Join us in fostering a community of book enthusiasts who share a love for the written word.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+      <section class="ftco-section testimony-section ftco-no-pb">
+      <div class="img img-bg border" style="background-image: url({%static 'myapp/images/bg_4.jpg' %});"></div>
+      <div class="overlay"></div>
+    <div class="container">
+      <div class="row justify-content-center mb-5">
+        <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
+            <span class="subheading">Testimonial</span>
+          <h2 class="mb-3">Kinds Words From Clients</h2>
+        </div>
+      </div>
+      <div class="row ftco-animate">
+        <div class="col-md-12">
+          <div class="carousel-testimony owl-carousel ftco-owl">
+            <div class="item">
+              <div class="testimony-wrap py-4">
+                  <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
+                <div class="text">
+                  <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                  <div class="d-flex align-items-center">
+                      <div class="user-img" style="background-image: url({%static 'myapp/images/person_1.jpg' %})"></div>
+                      <div class="pl-3">
+                          <p class="name">Roger Scott</p>
+                          <span class="position">Marketing Manager</span>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="testimony-wrap py-4">
+                  <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
+                <div class="text">
+                  <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                  <div class="d-flex align-items-center">
+                      <div class="user-img" style="background-image: url({% static 'myapp/images/person_2.jpg' %})"></div>
+                      <div class="pl-3">
+                          <p class="name">Roger Scott</p>
+                          <span class="position">Marketing Manager</span>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="testimony-wrap py-4">
+                  <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
+                <div class="text">
+                  <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                  <div class="d-flex align-items-center">
+                      <div class="user-img" style="background-image: url({% static 'myapp/images/person_3.jpg' %})"></div>
+                      <div class="pl-3">
+                          <p class="name">Roger Scott</p>
+                          <span class="position">Marketing Manager</span>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="testimony-wrap py-4">
+                  <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
+                <div class="text">
+                  <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                  <div class="d-flex align-items-center">
+                      <div class="user-img" style="background-image: url({% static 'myapp/images/person_1.jpg' %})"></div>
+                      <div class="pl-3">
+                          <p class="name">Roger Scott</p>
+                          <span class="position">Marketing Manager</span>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="testimony-wrap py-4">
+                  <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
+                <div class="text">
+                  <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                  <div class="d-flex align-items-center">
+                      <div class="user-img" style="background-image: url({% static 'myapp/images/person_2.jpg' %})"></div>
+                      <div class="pl-3">
+                          <p class="name">Roger Scott</p>
+                          <span class="position">Marketing Manager</span>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ftco-counter ftco-section img" id="section-counter">
+      <div class="container">
+          <div class="row">
+        <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
+          <div class="block-18 py-4 mb-4">
+            <div class="text align-items-center">
+              <strong class="number" data-number="75678">0</strong>
+              <span>Active Readers</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
+          <div class="block-18 py-4 mb-4">
+            <div class="text align-items-center">
+              <strong class="number" data-number="3040">0</strong>
+              <span>Total Pages</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
+          <div class="block-18 py-4 mb-4">
+            <div class="text align-items-center">
+              <strong class="number" data-number="283">0</strong>
+              <span>Cup Of Coffee</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
+          <div class="block-18 py-4 mb-4">
+            <div class="text align-items-center">
+              <strong class="number" data-number="14500">0</strong>
+              <span>Facebook Fans</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+  </section>
+
+  
+{% endblock %}

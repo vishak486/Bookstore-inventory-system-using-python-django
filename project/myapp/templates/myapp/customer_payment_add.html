@@ -1,0 +1,81 @@
+{% extends 'myapp/customer_base.html' %}
+{% load static %}
+{% block title %}Check Out {% endblock %}
+{% block body %}
+<section class="ftco-section">
+<center>
+    <h1>Check Out </h1>
+     <div class="container">
+         <div class="row">
+             <div class="col-md-6">
+                 <h2>Item List</h2>
+                   <table class="table table-striped table-bordered auto-index">
+        <thead class="thead-dark">
+             <tr>
+            <th>Sl.No</th>
+            <th>Product</th>
+            <th>Qty</th>
+            <th>Date/Time</th>
+
+        </tr>
+             </thead>
+        {% for p in cart_list %}
+        <tbody>
+             <tr class="info ">
+            <td></td>
+            <td>
+                {% for pm in book_list%}
+                {% if pm.id == p.book_id %}
+                {{pm.book_name}}
+                {% endif %}
+                {% endfor %}
+            </td>
+            <td>{{ p.qty }}</td>
+            <td>{{ p.dt }} / {{ p.tm }}</td>
+
+        </tr>
+             </tbody>
+        {% endfor %}
+        </table>
+
+             </div>
+         <div class="col-md-6">
+             <h2>Payment Details</h2>
+    <form role="form" name="frm" action="{% url 'customer_payment_add'%}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="amt">Amount :</label>
+            <input class="form-control" type="text"  id="amt" name="amt" value={{amt}} required="required">
+        </div>
+        <div class="form-group">
+            <label for="card_no">card_no :</label>
+            <input class="form-control" type="text"  id="card_no" name="card_no" value='' required="required">
+        </div>
+        <div class="form-group">
+            <label for="cvv">cvv :</label>
+            <input class="form-control" type="text"  id="cvv" name="cvv" value='' required="required">
+        </div>
+        <button type="submit" class="btn btn-info" id="bt" name="bt">Pay</button>
+        <button type="reset" class="btn btn-info" id="rt" name="rt">Clear</button>
+    </form>
+     </div>
+         </div>
+     </div>
+    <h3>{{msg}}</h3>
+</center>
+</section>
+<style>
+  form
+  {
+    counter-reset: Serial;
+  }
+  table
+  {
+  }
+  .auto-index td:first-child:before
+  {
+    counter-increment: Serial;
+    content:counter(Serial);
+  }
+</style>
+{% endblock %}

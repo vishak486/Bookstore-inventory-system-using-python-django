@@ -1,0 +1,61 @@
+{% extends 'myapp/admin_base.html' %}
+{% load static %}
+{% block title %}Add Book{% endblock %}
+{% block body %}
+<section class="ftco-section">
+<center>
+    <h2><font color="#366092">Add Product</font></h2>
+<div class="container">
+    <form name="frm" role="form" action="{% url 'admin_book_master_add' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+        <div class="form-group">
+            <label for="product_name">Name</label>
+            <input class="form-control" type="text"  name="book_name" placeholder="Book name" required="required" id="product_name">
+        </div>
+           <div class="form-group">
+               <label for="sub_category_id">Category</label>
+                    <select class="form-control" id="category_name"  name="category_name">
+		            {% for  sc in category_list%}
+		                <option value="{{sc.category_name}}">{{sc.category_name}}</option>
+		            {% endfor %}
+		            </select>
+           </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <input class="form-control" type="text"  name="description" placeholder="description "
+                       required="required" id="description">
+            </div>
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="text"  class="form-control" id="price" name="price"
+                       placeholder="100.0" required="required">
+            </div>
+        <div class="form-group">
+                <label for="stock">stock</label>
+                <input type="text"  class="form-control" id="stock" name="stock"
+                       placeholder="100.0" required="required">
+            </div>
+            <div class="form-group">
+                <label for="author">Author</label>
+                <input type="text"  class="form-control" id="author" name="author"
+                       placeholder="Author name" required="required">
+            </div>
+        <div class="form-group">
+                <label for="keywords">keywords</label>
+                <input type="text"  class="form-control" id="keywords" name="keywords"
+                       placeholder="keywords" required="required">
+            </div>
+        <div class="form-group">
+            <label for="document">Picture</label>
+            <input class="form-control" type="file" name="document" id="document">
+        </div>
+        <br><br>
+           <button type="submit" class="btn btn-info" id="bt" name="bt">Add</button>
+        <button type="reset" class="btn btn-info" id="rt" name="rt">Reset</button>
+        {{msg}}
+        <br><br>
+    </form>
+</div>
+</center>
+</section>
+{% endblock %}

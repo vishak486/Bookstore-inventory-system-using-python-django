@@ -1,0 +1,24 @@
+{% extends 'myapp/customer_base.html' %}
+{% load static %}
+{% block title %}Update Quantity{% endblock %}
+{% block body %}
+<section class="ftco-section">
+<center>
+    <h2>Update Quantity</h2>
+	<div class="container">
+    <form role="form" name="frm" action="{% url 'customer_cart_quantity_edit' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+			<label for="category_name"> Quantity </label>
+	        <input class="form-control" type="text"  id="qty" name="qty" value="{{qty}}" required="required">
+		</div>
+	    <button type="submit" class="btn btn-primary py-3 px-4" id="bt" name="bt">Add</button>
+        <button type="reset" class="btn btn-info py-3 px-4" id="rt" name="rt">Reset</button>
+        <input type="hidden" name="c_id" value="{{c_id}}">
+	    </table>
+    </form>
+	{{msg}}
+	</div>
+</center>
+</section>
+{% endblock %}

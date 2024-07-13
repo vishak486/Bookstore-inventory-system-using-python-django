@@ -1,0 +1,54 @@
+{% extends 'myapp/customer_base.html' %}
+{% load static %}
+{% block title %}
+Book Search 
+{% endblock %}
+{% block background %}background="{% static './myapp/images/unsplash.jpg' %}"{% endblock %}
+{% block body %}
+
+      <section class="ftco-section">
+      <center>
+        <h1 class="mb-0 bread"><font color="#366092">Book Search</font></h1>
+        <div class="container">
+        <form name="frm"  role="form" action="{% url 'customer_book_search' %}" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="app_name">Name</label>
+                    <input class="form-control" type="text" name="book_name" placeholder="Enter book name" id="book_name">
+                </div>
+                    <button type="submit" class="btn btn-primary" id="bt" name="bt">Search</button>
+            <button type="reset" class="btn btn-info" id="rt" name="rt">Reset</button>
+            {{msg}}
+            </form>
+        </div>
+    
+
+    <div class="container-fluid px-md-5">
+        <div class="row">
+
+          {% for bk in book_list %} 
+            <div class="col-md-6 col-lg-4 d-flex">
+                <div class="book-wrap d-lg-flex">
+                    <div class="img d-flex justify-content-end" style="background-image: url('{% static 'myapp/media/' %}{{ bk.pic }}');">
+                        <div class="in-text">
+                            <a href="../customer_cart_add?book_id={{bk.id}}" class="icon d-flex align-items-center justify-content-center" data-toggle="tooltip" data-placement="left" title="Add to cart">
+                                <span class="flaticon-shopping-cart"></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="text p-4">
+                        <p class="mb-2"><span class="price">${{ bk.price }}</span></p>
+                        <h2><a href="#">{{ bk.book_name }}</a></h2>
+                        <span class="position">By {{ bk.author }}</span>
+                        <span class="position">Available Stock {{ bk.stock }}</span>
+                        <span class="position">Description: {{ bk.description }}</span>
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}  
+        </div>
+    </center>
+    </section>
+  
+      {% endblock %}   

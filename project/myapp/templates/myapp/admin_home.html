@@ -1,0 +1,66 @@
+{% extends 'myapp/admin_base.html' %}
+{% load static %}
+{% block background %}{% endblock %}
+{% block body %}
+
+
+      <section class="ftco-counter ftco-section ftco-no-pt ftco-no-pb img bg-light" id="section-counter">
+      <div class="container">
+          <div class="row">
+        <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
+          <div class="block-18 py-4 mb-4">
+            <div class="text align-items-center">
+              <strong class="number" data-number="75678">{{ total_user }}</strong>
+              <span>Active Customers</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
+          <div class="block-18 py-4 mb-4">
+            <div class="text align-items-center">
+              <strong class="number" data-number="3040">5</strong>
+              <span>Total Categories</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
+          <div class="block-18 py-4 mb-4">
+            <div class="text align-items-center">
+              <strong class="number" data-number="283">0</strong>
+              <span>Total Books</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+  </section>
+      
+  <section class="ftco-section ftco-no-pt">
+    <div class="container-fluid px-md-4">
+        <div class="row justify-content-center pb-5 mb-3">
+            <div class="col-md-7 heading-section text-center ftco-animate">
+                <span class="subheading">Books</span>
+                <h2>New Release</h2>
+            </div>
+        </div>
+        <div class="row">
+            {% for bk in book_list %}
+                <div class="col-md-6 col-lg-4 d-flex">
+                    <div class="book-wrap d-lg-flex">
+                        <div class="img d-flex justify-content-end" style="background-image: url('{% static 'myapp/media/' %}{{ bk.pic }}');">
+                        </div>
+                        <div class="text p-4">
+                            <p class="mb-2"><span class="price">${{ bk.price }}</span></p>
+                            <h2><a href="#">{{ bk.book_name }}</a></h2>
+                            <span class="position">By {{ bk.author }}</span>
+                            <span class="position">Available Stock {{ bk.stock }}</span>
+                            <span class="position">Description: {{ bk.description }}</span>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'myapp/admin_base.html' %}
+{% load static %}
+{% block title %}Add Category{% endblock %}
+{% block body %}
+<section class="ftco-section">
+<center>
+    <h2>New Category</h2>
+	<div class="container">
+    <form role="form" name="frm" action="{% url 'admin_category_details_add' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+			<label for="category_name"> Category </label>
+	        <input class="form-control" type="text"  id="category_name" name="category_name" placeholder="category " required="required">
+		</div>
+	    <button type="submit" class="btn btn-primary py-3 px-4" id="bt" name="bt">Add</button>
+        <button type="reset" class="btn btn-info py-3 px-4" id="rt" name="rt">Reset</button>
+	    </table>
+    </form>
+	{{msg}}
+	</div>
+</center>
+</section>
+{% endblock %}
